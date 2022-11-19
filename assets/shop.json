@@ -1,0 +1,68 @@
+{
+  "categories": [
+    {
+      "title": "Man",
+      "icon": "assets/icons/man.png"
+    },
+    {
+      "title": "Women",
+      "icon": "assets/icons/women.png"
+    },
+    {
+      "title": "Devices",
+      "icon": "assets/icons/devices.png"
+    },
+    {
+      "title": "Gadgets",
+      "icon": "assets/icons/gadgets.png"
+    },
+    {
+      "title": "Gaming",
+      "icon": "assets/icons/gaming.png"
+    }
+  ],
+  "products": [
+    {
+      "cover": "assets/images/product1.jpeg",
+      "title": "Men's Pullover",
+      "sub_title": "Autumn High Quality",
+      "price": "155",
+      "currency": "$"
+    },
+    {
+      "cover": "assets/images/product2.jpeg",
+      "title": "Running Shoes",
+      "sub_title": "Airavata",
+      "price": "1237",
+      "currency": "MDL"
+    },
+    {
+      "cover": "assets/images/product3.jpeg",
+      "title": "Leather Boots",
+      "sub_title": "Winter Leather Shoes",
+      "price": "2137",
+      "currency": "MDL"
+    },
+    {
+      "cover": "assets/images/product4.jpeg",
+      "title": "Protect Case",
+      "sub_title": "Macbook Air Pro",
+      "price": "30",
+      "currency": "$"
+    },
+    {
+      "cover": "assets/images/product5.jpeg",
+      "title": "Wireless Mouse",
+      "sub_title": "Optical Wireless Mouse",
+      "price": "15",
+      "currency": "$"
+    },
+    {
+      "cover": "assets/images/product6.jpeg",
+      "title": "Off Road Bike",
+      "sub_title": "Carbon Frame",
+      "price": "23187",
+      "currency": "MDL"
+    }
+  ]
+}
