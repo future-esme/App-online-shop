@@ -118,9 +118,59 @@ class _ProductDetailState extends State<ProductDetail> {
               // ),
             ],
           ),
-        )
+        ),
+        bottomNavigationBar: bottomAppBar(product),
       );
     }
+  }
+
+  BottomAppBar bottomAppBar(ProductReview product) {
+    return BottomAppBar(
+      color: Colors.white,
+      child: IconTheme(
+        data: IconThemeData(color: Theme.of(context).colorScheme.primary),
+        child: Row(
+          children: [
+            Container(height: 60,child: Padding(
+              padding: EdgeInsets.only(left: 15, top: 10),
+              child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+              const Text('PRICE',
+              style: TextStyle(
+                color: kGrey
+              ),),
+              Padding(padding: EdgeInsets.only(top: 3),
+                child: Text('\$ ${product.price}',
+                  style: const TextStyle(
+                      color: kGreen,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20
+                  ),))
+              ],
+            ),
+            ),),
+            Spacer(),
+            Container(height: 60,child: Padding(
+              padding: EdgeInsets.only(right: 25, top: 10, bottom: 10),
+              child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                    color: kGreen,
+                  ),
+                alignment: Alignment.center,
+                width: 150,
+                child: const Padding(padding: EdgeInsets.all(10),
+                child: Text('ADD',
+                  style: TextStyle(
+                      color: Colors.white),
+                ))
+              ),
+            ),)
+          ],
+        ),
+      ),
+    );
   }
 
   Column detailsSection(ProductReview productReview) {
@@ -131,6 +181,7 @@ class _ProductDetailState extends State<ProductDetail> {
         Text(
           product.details,
           textAlign: TextAlign.left,
+          maxLines: 3,
           style: const TextStyle(
             color: Colors.black,
             fontSize: 15
@@ -141,19 +192,6 @@ class _ProductDetailState extends State<ProductDetail> {
       ],
     );
   }
-
-  // Column reviewSection(ProductReview product) {
-  //   return Column(
-  //     //crossAxisAlignment: CrossAxisAlignment.center,
-  //     children: [
-  //       _staticText('Review', Colors.black, FontWeight.bold, 20),
-  //       const SizedBox(height: ksSpace),
-  //       _staticText('Write your', kGreen, FontWeight.normal, 15),
-  //       const SizedBox(height: kSpace),
-  //       reviewList(product.reviews)
-  //     ],
-  //   );
-  // }
 
   Expanded reviewList(List<Review> reviews) {
     return Expanded(
@@ -194,22 +232,28 @@ class _ProductDetailState extends State<ProductDetail> {
     );
   }
 
-  Column _test(Review review) {
-    return Column(
+  Stack _test(Review review) {
+    return Stack(
       children: [
-        Row(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(55),
-              child: Image.network(defaultPhoto, height: 45, width: 45, ),
-            ),
-            const SizedBox(width: 10),
-            Text(review.first_name + review.last_name),
-            Spacer(),
-            _starRating(review.rating),
-          ],
+        ClipRRect(
+          borderRadius: BorderRadius.circular(55),
+          child: Image.network(defaultPhoto, height: 45, width: 45, ),
         ),
-        Text(review.message, textAlign: TextAlign.left,),
+        Positioned(left: 70,
+          width: 300,
+          height: 20,child:
+          Row(
+            children: [
+              //const SizedBox(width: 10),
+              Text(review.first_name + review.last_name),
+              Spacer(),
+              _starRating(review.rating),
+            ],
+          ),
+        ),
+        Positioned(child: Text(review.message, textAlign: TextAlign.left,),
+        left: 70,
+        top: 30)
       ],
     );
   }
@@ -219,10 +263,11 @@ class _ProductDetailState extends State<ProductDetail> {
           allowHalfRating: false,
           onRated: (v) {},
           starCount: rating,
+          rating: rating.toDouble(),
           size: 20.0,
           isReadOnly: true,
           color: Colors.amberAccent,
-          halfFilledIconData: Icons.blur_on,
+          filledIconData: Icons.star,
           borderColor: Colors.amberAccent,
           spacing: 0.0);
   }
@@ -284,7 +329,7 @@ class _ProductDetailState extends State<ProductDetail> {
           fontSize: 18
         )),
         Spacer(),
-        Text(size)
+        Text((size.length > 14) ? 'Universal' : size)
       ],
     );
     Padding padding = Padding(padding: EdgeInsets.all(15),
