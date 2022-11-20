@@ -8,6 +8,7 @@ buildCard(ProductE product) {
   return Padding(
     padding: EdgeInsets.all(8),
     child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           height: 200,

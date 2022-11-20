@@ -19,15 +19,4 @@ ListView category(productList) {
       });
 }
 
-GridView mostPopularCategory(context, product) {
-  return GridView.count(
-    crossAxisCount: 2,
-    childAspectRatio: 0.62,
-    children: List.generate(product.length, (index) {
-      return GestureDetector(
-        onTap: () => Get.to(() => ProductDetail(index: product[index].id)),
-        child: buildCard(product[index]),
-      );
-    }),
-  );
-}
+
