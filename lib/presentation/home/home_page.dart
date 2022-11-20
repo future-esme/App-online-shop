@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:lab4/domain/ProductE.dart';
 import 'package:lab4/presentation/home/CategoryController.dart';
 import 'package:lab4/presentation/home/ProductController.dart';
-import 'package:lab4/presentation/home/components/_body.dart';
 
 import '../../constant.dart';
 import '../../domain/Category.dart';
