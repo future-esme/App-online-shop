@@ -6,18 +6,10 @@ import 'package:lab4/domain/ProductReview.dart';
 AppBar detailAppBar(ProductReview product) {
   return AppBar(
     elevation: 0,
-    toolbarHeight: 200,
+    toolbarHeight: 150,
     backgroundColor: Colors.white,
     flexibleSpace: Image.network(product.main_image, fit: BoxFit.cover),
-    // title: Text(
-    //       product.name,
-    //       style: const TextStyle(
-    //         color: Colors.black,
-    //         fontWeight: FontWeight.bold,
-    //       ),
-    //     ),
     leading: closeActivity(),
-    //centerTitle: true,
     actions: const [
       Padding(
         padding: EdgeInsets.all(8),

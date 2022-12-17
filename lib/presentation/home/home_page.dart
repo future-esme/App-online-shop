@@ -91,10 +91,6 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        /*buildActionBar(),
-      SizedBox(height: kSpace),
-      buildSearchRow(),
-      SizedBox(height: kSpace),*/
         section('Categories', ''),
         const SizedBox(height: kSpace),
         Container(
